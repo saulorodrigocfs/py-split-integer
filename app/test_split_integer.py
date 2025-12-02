@@ -31,17 +31,15 @@ class Tests:
             value: int,
             nop: int,
             exp: list) -> None:
-        actual = split_integer(value, nop)
-        if len(actual) > 0:
-            assert max(actual) - min(actual) <= 1
+        assert max(split_integer(value, nop)) - \
+            min(split_integer(value, nop)) <= 1
 
     def test_parts_should_be_sorted_when_they_are_not_equal(
             self,
             value: int,
             nop: int,
             exp: list) -> None:
-        actual = split_integer(value, nop)
-        assert actual == sorted(actual)
+        assert sorted(split_integer(value, nop))
 
     def test_split_integer_returns_correct_result(
             self,
