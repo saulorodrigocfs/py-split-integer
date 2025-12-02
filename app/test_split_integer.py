@@ -17,18 +17,16 @@ class Tests:
             value: int,
             nop: int,
             exp: list) -> None:
-        actual = split_integer(value, nop)
-        assert sum(actual) == value
+        assert sum(split_integer(value, nop)) == value
 
-    def test_should_split_into_equal_parts_when_value_divisible_by_parts(
+    def test_output_has_correct_number_of_parts(
             self,
             value: int,
             nop: int,
             exp: list) -> None:
-        actual = split_integer(value, nop)
-        assert len(actual) == nop
+        assert len(split_integer(value, nop)) == nop
 
-    def test_should_return_part_equals_to_value_when_split_into_one_part(
+    def test_difference_between_parts_is_at_most_one(
             self,
             value: int,
             nop: int,
@@ -45,10 +43,9 @@ class Tests:
         actual = split_integer(value, nop)
         assert actual == sorted(actual)
 
-    def test_should_add_zeros_when_value_is_less_than_number_of_parts(
+    def test_split_integer_returns_correct_result(
             self,
             value: int,
             nop: int,
             exp: list) -> None:
-        actual = split_integer(value, nop)
-        assert actual == exp
+        assert split_integer(value, nop) == exp
