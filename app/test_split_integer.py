@@ -39,7 +39,7 @@ class Tests:
             value: int,
             nop: int,
             exp: list) -> None:
-        assert sorted(split_integer(value, nop))
+        assert split_integer(value, nop) == sorted(split_integer(value, nop))
 
     def test_split_integer_returns_correct_result(
             self,
